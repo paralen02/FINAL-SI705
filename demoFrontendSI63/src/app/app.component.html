@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" *ngIf="verificar()">
+    <mat-icon>menu</mat-icon>
+    <button mat-button [matMenuTriggerFor]="menuPostres" *ngIf="validarRol()">Postres</button>
+    <button mat-button [matMenuTriggerFor]="menuIngredientes">Ingredientes</button>
+    <button mat-button [matMenuTriggerFor]="menuReportes">Reportes</button>
+    <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
+  </mat-toolbar>
+
+  <mat-menu #menuPostres="matMenu">
+    <button mat-menu-item routerLink="components/postres/nuevo" *ngIf="role == 'USER'">Registrar</button>
+    <button mat-menu-item routerLink="components/postres">Listar</button>
+    <button mat-menu-item routerLink="components/postres/reporte">Buscar</button>
+  </mat-menu>
+
+  <mat-menu #menuIngredientes="matMenu">
+    <button mat-menu-item routerLink="components/ingredients/nuevo" *ngIf="role == 'USER'">Registrar Ingrediente</button>
+    <button mat-menu-item routerLink="components/ingredients">Listar Ingrediente</button>
+  </mat-menu>
+
+  <mat-menu #menuReportes="matMenu">
+    <button mat-menu-item routerLink="components/reportes">Reporte01</button>
+  </mat-menu>
+  <mat-menu #menuSalir="matMenu">
+    <button mat-menu-item routerLink="/login" (click)="cerrar()">
+      <mat-icon>logout</mat-icon>
+      <span>Cerrar sesión</span>
+
+    </button>
+    <button mat-menu-item >Rol:
+      <span>{{role}}</span>
+    </button>
+    <!-- Agrega más elementos de menú si es necesario -->
+  </mat-menu>
+
+  <router-outlet></router-outlet>
+

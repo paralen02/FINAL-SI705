@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de postres</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>idDessert</mat-label>
+          <input matInput placeholder="Id" formControlName="idDessert" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Postre</mat-label>
+          <input matInput placeholder="Postre" formControlName="nameDessert" />
+          <mat-error
+            *ngIf="obtenerControlCampo('nameDessert')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Calorías</mat-label>
+          <input
+            matInput
+            placeholder="Calorías"
+            formControlName="caloryDessert"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('caloryDessert')?.errors?.['required']"
+          >
+            Las calorías son  obligatorias.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Tipo</mat-label>
+          <mat-select formControlName="typeDessert">
+            <mat-option *ngFor="let p of tipos" [value]="p.value">
+              {{p.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('typeDessert')?.errors?.['required']">
+            El tipo es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field appearance="fill" class="example-full-width">
+          <input
+            matInput
+            placeholder="Ingrese fecha"
+            [matDatepicker]="picker"
+            formControlName="dueDateDessert"
+            [max]="maxFecha"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error
+            *ngIf="obtenerControlCampo('dueDateDessert')?.errors?.['required']"
+          >
+           La fecha de creación es obligatoria.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/components/postres">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
+

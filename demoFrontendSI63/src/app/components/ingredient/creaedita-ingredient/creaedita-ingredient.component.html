@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" style="text-align: center">
+        <h2>Registro de Ingredientes</h2>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Ingrediente</mat-label>
+                <input matInput placeholder="Ingrediente" formControlName="nameIngredient" />
+                <mat-error *ngIf="obtenerControlCampo('nameIngredient')?.errors?.['required']">
+                    El tipo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Cantidad</mat-label>
+                <input matInput placeholder="400" formControlName="amountIngredient" />
+                <mat-error *ngIf="obtenerControlCampo('amountIngredient')?.errors?.['required']">
+                    El tipo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+                <mat-label>Tipo</mat-label>
+                <mat-select formControlName="typeIngredient">
+                    <mat-option *ngFor="let p of tiposingredientes" [value]="p.value">
+                        {{p.viewValue}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="obtenerControlCampo('typeIngredient')?.errors?.['required']">
+                    El tipo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Postre</mat-label>
+                <mat-select formControlName="dessert">
+                    <mat-option *ngFor="let p of listaPostres" [value]="p.idDessert">
+                        {{p.nameDessert}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="obtenerControlCampo('dessert')?.errors?.['required']">
+                    El postre es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/ingredientes">
+                Cancelar
+            </button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+
+</html>
