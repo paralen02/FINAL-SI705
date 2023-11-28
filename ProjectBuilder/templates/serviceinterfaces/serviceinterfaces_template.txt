@@ -1,0 +1,10 @@
+package pe.edu.upc.aaw.{projectname}.serviceinterfaces;
+import pe.edu.upc.aaw.{projectname}.entities.{class_name};
+import java.util.List;
+
+public interface I{class_name}Service {{
+    void insert({class_name} {class_name});
+    void delete(int id);
+    {class_name} listId(int id);
+    List<{class_name}> list();
+}}

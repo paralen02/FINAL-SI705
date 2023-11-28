@@ -1,0 +1,33 @@
+package pe.edu.upc.aaw.{projectname}.entities;
+import javax.persistence.*;
+import java.time.*;
+
+@Entity
+@Table(name = "{class_name}")
+public class {class_name} {{
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id{class_name};
+
+    {attributes_code}
+
+    {relationships_code}
+
+    public {class_name}() {{ }}
+
+    public {class_name}(int id{class_name}, {parameters}) {{
+        this.id{class_name} = id{class_name};
+        {constructor_assignments}
+    }}
+
+    public int getId{class_name}() {{
+        return id{class_name};
+    }}
+
+    public void setId{class_name}(int {class_name}) {{
+        this.id{class_name} = {class_name};
+    }}
+
+    {getters_setters}
+}}

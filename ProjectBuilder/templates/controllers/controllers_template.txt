@@ -1,0 +1,55 @@
+package pe.edu.upc.aaw.{projectname}.controllers;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.{projectname}.dtos.{class_name}DTO;
+import pe.edu.upc.aaw.{projectname}.entities.{class_name};
+import pe.edu.upc.aaw.{projectname}.serviceinterfaces.I{class_name}Service;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/{lowercase_class_name}")
+public class {class_name}Controller {{
+    @Autowired
+    private I{class_name}Service myService;
+
+    // Add an item to table
+    @PostMapping
+    public void registrar(@RequestBody {class_name}DTO dto) {{
+        ModelMapper m = new ModelMapper();
+        {class_name} myItem = m.map(dto, {class_name}.class);
+        myService.insert(myItem);
+    }}
+
+    // Delete an item by ID on table
+    @DeleteMapping("/{{id}}")
+    public void eliminar(@PathVariable("id")Integer id){{
+        myService.delete(id);
+    }}
+
+    // Retrieve an items by ID from table
+    @GetMapping("/{{id}}")
+    public {class_name}DTO listarId(@PathVariable("id")Integer id){{
+        ModelMapper m = new ModelMapper();
+        {class_name}DTO myItem = m.map(myService.listId(id), {class_name}DTO.class);
+        return myItem;
+    }}
+
+    // Retrieve all items from table
+    @GetMapping
+    public List<{class_name}DTO> listar(){{
+        return myService.list().stream().map(x -> {{
+            ModelMapper m = new ModelMapper();
+            return m.map(x, {class_name}DTO.class);
+        }}).collect(Collectors.toList());
+    }}
+
+    // (Exclusive to controller) Modify values on table
+    @PutMapping
+    public void modificar(@RequestBody {class_name}DTO dto) {{
+        ModelMapper m = new ModelMapper();
+        {class_name} d = m.map(dto, {class_name}.class);
+        myService.insert(d);
+    }}
+}}

@@ -1,0 +1,20 @@
+package pe.edu.upc.aaw.{projectname}.dtos;
+import javax.persistence.*;
+import pe.edu.upc.aaw.etcapi.entities.*;
+import java.time.*;
+
+public class {class_name}DTO {{
+    
+    private int id{class_name};
+    {attributes_code}
+
+    public int getId{class_name}() {{
+        return id{class_name};
+    }}
+
+    public void setId{class_name}(int id{class_name}) {{
+        this.id{class_name} = id{class_name};
+    }}
+
+    {getters_setters}
+}}

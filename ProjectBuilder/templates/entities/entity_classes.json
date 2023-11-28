@@ -1,0 +1,80 @@
+{
+    "Asesorias": {
+        "link": "String",
+        "fecha": "LocalDateTime",
+        "motivo": "String"
+    },
+    "Caracteristicas": {
+        "color": "String",
+        "dimensiones": "String",
+        "material": "String",
+        "meses_uso": "int"
+    },
+    "Categorias": {
+        "tipo": "String"
+    },
+    "Chats": {
+        "estado": "boolean"
+    },
+    "Compradores": {
+        "nombres": "String",
+        "apellidos": "String",
+        "celular": "String",
+        "dni": "String"
+    },
+    "Compras": {
+        "fecha": "LocalDateTime"
+    },
+    "Envios": {
+        "entregado": "boolean",
+        "fecha_envio": "LocalDate",
+        "fecha_compra": "LocalDate",
+        "departamento": "String",
+        "provincia": "String",
+        "distrito": "String",
+        "direccion": "String",
+        "referencia": "String"
+    },
+    "Favoritos": {
+
+    },
+    "Mensajes": {
+        "fecha": "LocalDateTime",
+        "mensaje": "String"
+    },
+    "Operaciones": {
+        "fecha": "LocalDateTime"
+    },
+    "Pagos": {
+        "correo": "String",
+        "cvv": "int",
+        "numero_tarjeta": "String",
+        "vencimiento_tarjeta": "LocalDate",
+        "titular": "String"
+    },
+    "Productos": {
+        "precio": "Long",
+        "imagen": "String",
+        "stock": "int"
+    },
+    "Publicaciones": {
+        "titulo": "String",
+        "descripcion": "String",
+        "fecha": "LocalDateTime"
+    },
+    "Repartidores": {
+        "nombres": "String",
+        "apellidos": "String",
+        "dni": "String",
+        "celular": "String"
+    },
+    "Resenias": {
+        "comentario": "String",
+        "calificacion": "int",
+        "fecha": "LocalDateTime"
+    },
+    "Vendedores": {
+        "direccion": "String",
+        "distrito": "String"
+    }
+}

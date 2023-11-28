@@ -1,0 +1,98 @@
+{
+    "Asesorias": {
+        "compra": {
+            "entity": "Compras",
+            "join_column": "compra_id"
+        }
+    },
+    "Chats": {
+        "compra": {
+            "entity": "Compras",
+            "join_column": "compra_id"
+        }
+    },
+    "Compradores": {
+        "user": {
+            "entity": "Users",
+            "join_column": "user_id"
+        }
+    },
+    "Compras": {
+        "operacion": {
+            "entity": "Operaciones",
+            "join_column": "operacion_id"
+        },
+        "publicacion": {
+            "entity": "Publicaciones",
+            "join_column": "publicacion_id"
+        },
+        "comprador": {
+            "entity": "Compradores",
+            "join_column": "comprador_id"
+        },
+        "envio": {
+            "entity": "Envios",
+            "join_column": "envio_id"
+        }
+    },
+    "Envios": {
+        "repartidor": {
+            "entity": "Repartidores",
+            "join_column": "repartidor_id"
+        }
+    },
+    "Favoritos": {
+        "publicacion": {
+            "entity": "Publicaciones",
+            "join_column": "publicacion_id"
+        },
+        "comprador": {
+            "entity": "Compradores",
+            "join_column": "comprador_id"
+        }
+    },
+    "Mensajes": {
+        "chat": {
+            "entity": "Chats",
+            "join_column": "chat_id"
+        }
+    },
+    "Operaciones": {
+        "pago": {
+            "entity": "Pagos",
+            "join_column": "pago_id"
+        }
+    },
+    "Productos": {
+        "categoria": {
+            "entity": "Categorias",
+            "join_column": "categoria_id"
+        },
+        "vendedor": {
+            "entity": "Vendedores",
+            "join_column": "vendedor_id"
+        },
+        "caracteristica": {
+            "entity": "Caracteristicas",
+            "join_column": "caracteristica_id"
+        }
+    },
+    "Publicaciones": {
+        "producto": {
+            "entity": "Productos",
+            "join_column": "producto_id"
+        }
+    },
+    "Resenias": {
+        "compra": {
+            "entity": "Compras",
+            "join_column": "compra_id"
+        }
+    },
+    "Vendedores": {
+        "user": {
+            "entity": "Users",
+            "join_column": "user_id"
+        }
+    }
+}
