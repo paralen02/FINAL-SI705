@@ -4,6 +4,7 @@
 npm install @auth0/angular-jwt
 npm install ng2-charts chart.js --save
 npm install @types/chart.js --save-dev
+npm install moment
 
 npm install -g @angular/cli
 npm install -g typescript
